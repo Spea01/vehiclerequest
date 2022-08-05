@@ -253,3 +253,97 @@ function scriviRichieste(richieste){
         
     } );
    
+
+
+
+
+
+
+
+// ------------------------------  assegna classe di riferimento per dizionario lingua  -----------------------------------------------
+
+  var colCount = table.columns().header().length; 
+
+  for (var i=0; i<colCount; i++){
+    var nomeClasse = "lang-TableRequestsCol" + i;
+    $( table.column( i ).header() ).addClass( nomeClasse );
+  }
+
+
+
+// ---- Assegna delle classi al datatable per usare il dizionario  -------------------------------------
+
+  $(".previous").addClass("lang-TastoPrevious")  // tasti dataTable
+  $(".next").addClass("lang-TastoNext")
+  $(".dataTables_empty").addClass("lang-TableEmpty")
+  
+
+
+
+
+
+
+// ----------------------------------------------------------------  CAMBIO COLORE AL CLICK SU RIGA TABELLA  ----------------------------------------------------------------
+
+$("#TableRequests tbody").on('click', 'tr[data-assegnazione="Yes"]', function() {           // con il tasto sinistro solo sulle richieste in pending così evita di processare quelle già processate
+  
+  if (this.classList.contains("selected")){
+    this.classList.remove("selected");
+    table.button( 1 ).enable(false)
+  }else{
+    $("#TableRequests .selected").removeClass('selected')
+    this.classList.add("selected");
+    table.button( 1 ).enable()
+  }
+});
+    
+    
+    /*/
+    $(this).toggleClass("selected");
+    $(this).toggleClass("context-menu-one");
+    
+    table.button( 0 ).enable()
+    
+    })
+    
+});
+
+/*
+$("#TableRequests tbody").on('contextmenu', 'tr', function() {                                      // con il tasto destro
+    $(this).toggleClass("selected");
+});
+/*/
+
+/*/
+$(document).click(function() {                                                                      // rimuove selezione quando click fuori dall'area
+    $(".selected").removeClass("selected");
+    $(".context-menu-one").removeClass("context-menu-one");
+    table.button( 0 ).enable(false)
+});
+/*/
+
+$("#TableRequests tbody").click(function(event) {                                                   // rimuove selezione quando click fuori dall'area
+    
+    event.stopPropagation();
+});
+
+
+
+document.getElementById("loader").style.display = "none";                                            // ferma lo spinner
+
+/*/   
+   $('#TableRequests thead tr:eq(1) th').off('click.DT');                                            // rimuove il click order dalla riga con i field di ricerca
+
+   $('#TableRequests thead tr:eq(1) th').css("background", "none");                                  // rimuove da ogni cell le frecce per ordinare
+
+   
+
+   document.getElementById("TableRequests").style.visibility = "visible";                            // serve dopo avere aggiornato la tabella, nasconde difetti
+
+   document.getElementById("mostranascondi").style.visibility = "visible";                           // visualizza il tasto mostra nascondi, nasconde difetti 
+/*/
+
+
+
+
+}
