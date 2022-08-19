@@ -48,10 +48,10 @@ let JSON_COLONNE = '{ "columns" : ['
 // --------------------------------------------------------------------  SCRIVI RICHIESTE  -------------------------------------------------------------------------------------------
 
 function scriviRichieste(richieste){
-  const obj_colonne = JSON.parse(JSON_COLONNE);                                 //  *******************************  NUOVO
+  const obj_colonne = JSON.parse(JSON_COLONNE);                        //  *******************************  NUOVO
 
-  if (richieste==""){                                                                                // in caso di nessuna richiesta esce dalla funzione
-    document.getElementById("loader").style.display = "none";                                            // ferma lo spinner
+  if (richieste==""){                                                  // in caso di nessuna richiesta esce dalla funzione
+    document.getElementById("loader").style.display = "none";          // ferma lo spinner
     return false
   }
   
@@ -86,31 +86,8 @@ function scriviRichieste(richieste){
         // barra button
         
 
-        dom: 'Bfrtip',
-        buttons: [
-            
-            {
-                text: '<span id="myBtn" class="lang-Newrequest">New request</span>',
-                className: 'w3-button w3-blue w3-hover-blue',
-                action: function () {
-                                     resetForm();
-                                     modalRequest.style.display = "block";
-                                    },
-            },
-            {
-                text: '<span class="lang-TastoMenuRestituzione">Restituzione</span>',
-                className: 'w3-button w3-red w3-hover-red',
-                action: function () {
-                                      
-                                      var idRigaSelezionata = $('#elenco-richieste tr.selected')[0].id;
-                                      
-                                      mostraDialogReturn(idRigaSelezionata);
-                                      
-                                   },
-                enabled: false
-                
-            }
-        ],      
+        //dom: 'Bfrtip',
+              
              
                
         data: obj,
