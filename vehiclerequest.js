@@ -45,6 +45,36 @@ let JSON_COLONNE = '{ "columns" : ['
 
 
 
+// -----------------------------------------------------------  CONVERTE DATA IN DATASTRING  ----------------------------------------------------------------------------------
+
+function getDataDDmmYYHHmmss(data) {
+  var dataISO = new Date (data);
+  var giorno = dataISO.getDate();
+  var month = dataISO.getMonth() + 1;
+  var HH = dataISO.getHours();
+  var MM = dataISO.getMinutes();
+  var SS = dataISO.getSeconds();
+  
+  if ( giorno < 10 ) { 
+      giorno = "0" + giorno
+    }
+  
+  if ( month < 10 ) { 
+    month = "0" + month
+    }
+  
+  var dataString = giorno  + "/" + month + "/" + dataISO.getFullYear() +" "+ HH + ":" + MM + ":" + SS;
+    
+  if ( dataString == "NaN/NaN/NaN" ) {
+    dataString = ""
+          }
+
+  return dataString
+
+}
+
+
+
 // ---------------------------------------------------------  DIZIONARIO BARRA TITOLO  ----------------------------------------------------------------------------
 
 function dizionarioBarraTitoli(table){
