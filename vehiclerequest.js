@@ -45,7 +45,20 @@ let JSON_COLONNE = '{ "columns" : ['
 
 
 
-// --------------------------------------------------------------------  SCRIVI RICHIESTE  -------------------------------------------------------------------------------------------
+// ---------------------------------------------------------  DIZIONARIO BARRA TITOLO  ----------------------------------------------------------------------------
+
+function dizionarioBarraTitoli(table){
+  // assegna classe di riferimento per dizionario lingua  
+
+  var colCount = table.columns().header().length; 
+
+  for (var i=0; i<colCount; i++){
+    var nomeClasse = "lang-TableRequestsCol" + i;
+    $( table.column( i ).header() ).addClass( nomeClasse );
+  }
+}
+
+
 
 // --------------------------------------------------------------------  SCRIVI RICHIESTE  -------------------------------------------------------------------------------------------
 
