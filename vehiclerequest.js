@@ -284,9 +284,31 @@ function loadsLanguage(lang){
     } 
   });  
   
-  
- 
-
 }
 
+
+// ------------------------  CAMBIO COLORE AL CLICK SU RIGA TABELLA  --------------------------------------------------------------
+
+function selezioneDellaRiga(table){
+  
+  $("#TableRequests tbody").on('click', CONDIZIONERIGAPERSELEZIONE, function() {    // con il tasto sinistro solo sulle richieste in pending così evita di processare quelle già processate
+  
+  if (this.classList.contains("selected")){
+    this.classList.remove("selected");
+    azioniRigaDeSelezionata(table)
+    
+  }else{
+    $("#TableRequests .selected").removeClass('selected')
+    this.classList.add("selected");
+    azioniRigaSelezionata(table)
+  }
+
+});
+    
+$("#TableRequests tbody").click(function(event) {               // rimuove selezione quando click fuori dall'area
+    
+    event.stopPropagation();
+});
+
+}
 
