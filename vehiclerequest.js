@@ -164,7 +164,7 @@ function scriviRichieste(richieste){
                       creaRiga( row, data, dataIndex )
                     }, 
 
-        rowCallback: function( row, data, index ) {         
+        rowCallback: function( row, data, dataIndex ) {         
                        rigaCallback( row, data, dataIndex )
         },
  
