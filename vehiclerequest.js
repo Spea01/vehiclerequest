@@ -45,7 +45,7 @@ let JSON_COLONNE = '{ "columns" : ['
 
 
 
-// -----------------------------------------------------------  CONVERTE DATA IN DATASTRING  ----------------------------------------------------------------------------------
+// -----------------------------------------------------------  CONVERTE DATA IN DATASTRING  ---------------------------------------------------------------------
 
 function getDataDDmmYYHHmmss(data) {
   var dataISO = new Date (data);
@@ -90,7 +90,7 @@ function dizionarioBarraTitoli(table){
 
 
 
-// --------------------------------------------------------------------  SCRIVI RICHIESTE  -------------------------------------------------------------------------------------------
+// --------------------------------------------------------------  SCRIVI RICHIESTE  -----------------------------------------------------------------------------
 
 function scriviRichieste(richieste){
   const obj_colonne = JSON.parse(JSON_COLONNE);                        //  *******************************  NUOVO
@@ -190,4 +190,72 @@ dizionarioBarraTitoli(table);
 document.getElementById("loader").style.display = "none";
 
 }
+
+
+
+function initialize() {
+  var $dropdown = $("#country_select");    
+  $.each(LanguageList, function(key, value) {
+    $dropdown.
+      append($("<option/>").
+      val(key).
+      text(value));
+    });
+    
+  loadsLanguage("IT");
+}
+
+
+
+// ----------------------------------------------  SELEZIONE DELLA LINGUA  ------------------------------------------------
+
+function loadsLanguage(lang){
+  /*fills all the span tags with class=lang pattern*/ 
+  $('span[class*="lang"],a[class*="lang"],h1[class^="lang"],h2[class*="lang"],swal-title[class*="lang"],button[class^="lang"],td[class*="lang"],select option[class^="lang"],div[class^="lang"],th[class*="lang"],label[class*="lang"]').each(function(){
+    
+    
+    //var LangVar = (this.className).replace('lang-','');
+    
+    var LangVar = (this.className).split(" ");
+
+    
+    for (var i=0; i<LangVar.length; i++){
+     
+     
+     if (LangVar[i].startsWith("lang") == true) {
+       var newLangVar = LangVar[i].replace('lang-','');
+       var Text = window["WORDS_"+lang][newLangVar];
+       $(this).text(Text)
+     }
+    } 
+  });
+  
+  $('input[class^="lang"]').each(function(){                             // traduce i placeholder
+    var LangVar = (this.className).split(" ");
+    for (var i=0; i<LangVar.length; i++){
+      if (LangVar[i].startsWith("lang") == true) {
+        var newLangVar = LangVar[i].replace('lang-','');
+        var Text = window["WORDS_"+lang][newLangVar];
+        $(this).attr("placeholder", Text);
+      }
+    } 
+  });
+  
+  
+  $('textarea[class^="lang"]').each(function(){                             // traduce i placeholder
+    var LangVar = (this.className).split(" ");
+    for (var i=0; i<LangVar.length; i++){
+      if (LangVar[i].startsWith("lang") == true) {
+        var newLangVar = LangVar[i].replace('lang-','');
+        var Text = window["WORDS_"+lang][newLangVar];
+        $(this).attr("placeholder", Text);
+      }
+    } 
+  });  
+  
+  
+ 
+
+}
+
 
