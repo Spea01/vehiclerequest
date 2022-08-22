@@ -45,6 +45,37 @@ let JSON_COLONNE = '{ "columns" : ['
 
 
 
+// -----------------------------------------------------------  CONVERTE DATA IN DATASTRING  -------------------------------------------------------------------------------------------------
+
+function getDataDDMMYY_V2(data) {
+
+//if (data.length > 10) {
+var dataISO = new Date (data);
+var giorno = dataISO.getDate();
+var month = dataISO.getMonth() + 1;
+var year = String(dataISO.getFullYear()) ;
+                                                                                                           
+if ( giorno < 10 ) {      
+  giorno = "0" + giorno    
+}  else {
+giorno = String(giorno) 
+}
+                                                                                                           
+if ( month < 10 ) {     
+  month = "0" + month    
+} else {
+month = String(month)
+}
+                                                                                                      
+
+
+return (giorno +"/"+ month +"/"+ year)
+
+
+}
+
+
+
 // -----------------------------------------------------------  CONVERTE DATA IN DATASTRING  ---------------------------------------------------------------------
 
 function getDataDDmmYYHHmmss(data) {
