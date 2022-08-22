@@ -300,12 +300,12 @@ function selezioneDellaRiga(table){
   
   if (this.classList.contains("selected")){
     this.classList.remove("selected");
-    azioniRigaDeSelezionata(table)
+    azioniRigaDeSelezionata(this, table)
     
   }else{
     $("#TableRequests .selected").removeClass('selected')
     this.classList.add("selected");
-    azioniRigaSelezionata(table)
+    azioniRigaSelezionata(this, table)
   }
 
 });
