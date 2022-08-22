@@ -165,7 +165,7 @@ function scriviRichieste(richieste){
                     }, 
 
         rowCallback: function( row, data, index ) {         
-
+                       rigaCallback( row, data, dataIndex )
         },
  
     
