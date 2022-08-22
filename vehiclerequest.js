@@ -140,7 +140,7 @@ function scriviRichieste(richieste){
         
     });
 
-selezioneDellaRiga();
+selezioneDellaRiga(table);
 
 dizionarioBarraTitoli(table);
 
