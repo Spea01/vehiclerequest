@@ -87,7 +87,10 @@ function scriviRichieste(richieste){
         
 
         //dom: 'Bfrtip',
-              
+        
+    
+    dom: 'Bfrtip',
+    buttons: [ BOTTONI ],
              
                
         data: obj,
