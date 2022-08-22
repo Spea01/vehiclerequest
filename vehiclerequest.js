@@ -232,7 +232,12 @@ function initialize() {
       val(key).
       text(value));
     });
-    
+
+  
+  $(".previous").addClass("lang-TastoPrevious")  // tasti dataTable
+  $(".next").addClass("lang-TastoNext")
+  $(".dataTables_empty").addClass("lang-TableEmpty")
+  
   loadsLanguage("IT");
 }
 
