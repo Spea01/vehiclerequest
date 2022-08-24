@@ -212,6 +212,26 @@ document.getElementById("loader").style.display = "none";
 
 
 
+// ---------------------------------------------------------  DIZIONARIO BARRA TITOLO  ----------------------------------------------------------------------------
+
+function dizionarioBarraTitoli(table){
+  // assegna classe di riferimento per dizionario lingua  
+
+  var colCount = table.columns().header().length; 
+
+  for (var i=0; i<colCount; i++){
+    //var nomeClasse = "lang-TableRequestsCol" + i;
+    
+    var nomeClasse = PREFISSOCLASSE + i;
+    
+    $( table.column( i ).header() ).addClass( nomeClasse );
+  }
+}
+
+
+
+// ---------------------------------------------------------  INIZIALIZZA  -----------------------------------------------
+
 function initialize() {
   var $dropdown = $("#country_select");    
   $.each(LanguageList, function(key, value) {
