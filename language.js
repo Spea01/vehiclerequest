@@ -54,6 +54,7 @@ var WORDS_EN = {
   "Van" : "Van",
   "Shuttle" : "Shuttle bus",
   
+  
   "TableRequestsCol1" : "Registration date",
   "TableRequestsCol2" : "Driver",
   "TableRequestsCol3" : "Causal",
@@ -64,6 +65,23 @@ var WORDS_EN = {
   "TableRequestsCol8" : "Authorize email",
   "TableRequestsCol9" : "Authorization status",
   "TableRequestsCol10" : "License plate",
+  "TableRequestsCol14" : "Driver",
+  "TableRequestsCol15" : "Expected kilometers",
+  "TableRequestsCol16" : "Motivation",
+  "TableRequestsCol17" : "Pik-up date",
+  "TableRequestsCol18" : "Pik-up return",
+  "TableRequestsCol19" : "Destination",
+  "TableRequestsCol20" : "Company name",
+  "TableRequestsCol21" : "Vheicle option",
+  "TableRequestsCol22" : "Pik-up time",
+  "TableRequestsCol23" : "Return time",
+  "TableRequestsCol24" : "Number of passengers",
+  "TableRequestsCol25" : "Passengers name",
+  "TableRequestsCol26" : "Vehicle type",
+  "TableRequestsCol27" : "Authorizer email",
+  "TableRequestsCol28" : "Authorization status",
+  "TableRequestsCol30" : "License plate",
+  
   
   "tableAssignmentCol0": "License plate",
   "tableAssignmentCol1": "Brand",
