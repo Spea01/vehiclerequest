@@ -116,7 +116,7 @@ function dizionarioBarraTitoli(table, PREFISSOCLASSE){
   for (var i=0; i<colCount; i++){
     //var nomeClasse = "lang-TableRequestsCol" + i;
     
-    var nomeClasse = PREFISSOCLASSE + COLONNAORDINE[i];
+    var nomeClasse = PREFISSOCLASSE + COLONNAORDINE[i+1];
     
     $( table.column( i ).header() ).addClass( nomeClasse );
   }
