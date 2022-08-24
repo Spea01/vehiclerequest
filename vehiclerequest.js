@@ -108,7 +108,7 @@ function getDataDDmmYYHHmmss(data) {
 
 // ---------------------------------------------------------  DIZIONARIO BARRA TITOLO  ----------------------------------------------------------------------------
 
-function dizionarioBarraTitoli(table, PREFISSOCLASSE){
+function dizionarioBarraTitoli(table){
   // assegna classe di riferimento per dizionario lingua  
 
   var colCount = table.columns().header().length; 
@@ -116,7 +116,7 @@ function dizionarioBarraTitoli(table, PREFISSOCLASSE){
   for (var i=0; i<colCount; i++){
     //var nomeClasse = "lang-TableRequestsCol" + i;
     
-    var nomeClasse = PREFISSOCLASSE + COLONNAORDINE[i+1];
+    var nomeClasse = PREFISSOCLASSE + COLONNAORDINE[i];
     
     $( table.column( i ).header() ).addClass( nomeClasse );
   }
