@@ -111,7 +111,7 @@ function getDataDDmmYYHHmmss(data) {
 
 // --------------------------------------------------------------  SCRIVI RICHIESTE  -----------------------------------------------------------------------------
 
-function scriviRichieste(richieste){
+function scriviRichieste(richieste, nomeTabella){
   const obj_colonne = JSON.parse(JSON_COLONNE);                        //  *******************************  NUOVO
 
   if (richieste==""){                                                  // in caso di nessuna richiesta esce dalla funzione
@@ -149,11 +149,11 @@ function scriviRichieste(richieste){
         data: obj,
         
         createdRow: function(row, data, dataIndex ){
-                      creaRiga( row, data, dataIndex )
+                      creaRiga( row, data, dataIndex, nomeTabella )
                     }, 
 
         rowCallback: function( row, data, index ) {         
-                       rigaCallback( row, data, index, nomeRigaCallBack )
+                       rigaCallback( row, data, index, nomeTabella )
         },
         
         
