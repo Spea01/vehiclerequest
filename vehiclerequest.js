@@ -153,8 +153,10 @@ function scriviRichieste(richieste){
                     }, 
 
         rowCallback: function( row, data, index ) {         
-                       rigaCallback( row, data, index )
+                       rigaCallback( row, data, index, nomeRigaCallBack )
         },
+        
+        
  
     
     columns: obj_colonne.columns,
