@@ -216,7 +216,7 @@ document.getElementById("loader").style.display = "none";
 
 // ---------------------------------------------------------  DIZIONARIO BARRA TITOLO  ----------------------------------------------------------------------------
 
-function dizionarioBarraTitoli(table){
+function dizionarioBarraTitoli(table, prefissoClasse){
   // assegna classe di riferimento per dizionario lingua  
 
   var colCount = table.columns().header().length; 
@@ -224,7 +224,7 @@ function dizionarioBarraTitoli(table){
   for (var i=0; i<colCount; i++){
     //var nomeClasse = "lang-TableRequestsCol" + i;
     
-    var nomeClasse = PREFISSOCLASSE + i;
+    var nomeClasse = prefissoClasse + i;
     
     $( table.column( i ).header() ).addClass( nomeClasse );
   }
